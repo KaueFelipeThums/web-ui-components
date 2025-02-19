@@ -27,13 +27,13 @@ type DialogProps = React.ComponentProps<typeof BaseDialog> & {
   /** Classe CSS adicional para personalização do componente. */
   className?: string;
 
-  /** Classe CSS adicional para personalização do conteúdo do diálogo. */
+  /** Classe CSS adicional para personalização do conteúdo. */
   contentClassName?: string;
 
-  /** Classe CSS adicional para personalização do cabeçalho do diálogo. */
+  /** Classe CSS adicional para personalização do cabeçalho. */
   headerClassName?: string;
 
-  /** Classe CSS adicional para personalização do rodapé do diálogo. */
+  /** Classe CSS adicional para personalização do rodapé. */
   footerClassName?: string;
 
   /** Elemento disparador do diálogo. */

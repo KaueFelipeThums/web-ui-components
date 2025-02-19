@@ -49,15 +49,15 @@ export { type CarouselApi, Carousel, CarouselContent, CarouselItem, CarouselPrev
 export { Checkbox } from './checkbox';
 export { Collapsible, CollapsibleTrigger, CollapsibleContent } from './collapsible';
 export {
-  Command as BaseCommand,
-  CommandDialog as BaseCommandDialog,
-  CommandInput as BaseCommandInput,
-  CommandList as BaseCommandList,
-  CommandEmpty as BaseCommandEmpty,
-  CommandGroup as BaseCommandGroup,
-  CommandItem as BaseCommandItem,
-  CommandShortcut as BaseCommandShortcut,
-  CommandSeparator as BaseCommandSeparator,
+  Command,
+  CommandDialog,
+  CommandInput,
+  CommandList,
+  CommandEmpty,
+  CommandGroup,
+  CommandItem,
+  CommandShortcut,
+  CommandSeparator,
 } from './command';
 export {
   ContextMenu as BaseContextMenu,
@@ -88,11 +88,7 @@ export {
   DialogTitle as BaseDialogTitle,
   DialogDescription as BaseDialogDescription,
 } from './dialog';
-export {
-  HoverCard as BaseHoverCard,
-  HoverCardTrigger as BaseHoverCardTrigger,
-  HoverCardContent as BaseHoverCardContent,
-} from './hover-card';
+export { HoverCard, HoverCardTrigger, HoverCardContent } from './hover-card';
 export { Input as BaseInput } from './input';
 export { Textarea as BaseTextarea } from './textarea';
 export {
@@ -141,3 +137,59 @@ export {
   NavigationMenuIndicator,
   NavigationMenuViewport,
 } from './navigation-menu';
+export {
+  Pagination,
+  PaginationContent,
+  PaginationLink,
+  PaginationItem,
+  PaginationPrevious,
+  PaginationNext,
+  PaginationEllipsis,
+} from './pagination';
+export { Popover, PopoverTrigger, PopoverContent, PopoverAnchor } from './popover';
+export { Progress } from './progress';
+export { Separator } from './separator';
+export { Skeleton } from './skeleton';
+export { Slider } from './slider';
+export { Switch } from './switch';
+export { RadioGroup as BaseRadioGroup, RadioGroupItem as BaseRadioGroupItem } from './radio-group';
+export { ScrollArea } from './scroll-area';
+export {
+  Select as BaseSelect,
+  SelectGroup as BaseSelectGroup,
+  SelectValue as BaseSelectValue,
+  SelectTrigger as BaseSelectTrigger,
+  SelectContent as BaseSelectContent,
+  SelectLabel as BaseSelectLabel,
+  SelectItem as BaseSelectItem,
+  SelectSeparator as BaseSelectSeparator,
+  SelectScrollUpButton as BaseSelectScrollUpButton,
+  SelectScrollDownButton as BaseSelectScrollDownButton,
+} from './select';
+export {
+  Sheet as BaseSheet,
+  SheetPortal as BaseSheetPortal,
+  SheetOverlay as BaseSheetOverlay,
+  SheetTrigger as BaseSheetTrigger,
+  SheetClose as BaseSheetClose,
+  SheetContent as BaseSheetContent,
+  SheetHeader as BaseSheetHeader,
+  SheetFooter as BaseSheetFooter,
+  SheetTitle as BaseSheetTitle,
+  SheetDescription as BaseSheetDescription,
+} from './sheet';
+export { Table, TableHeader, TableBody, TableFooter, TableHead, TableRow, TableCell, TableCaption } from './table';
+export { Toggle, toggleVariants } from './toggle';
+export { ToggleGroup, ToggleGroupItem } from './toggle-group';
+export {
+  Tooltip as BaseTooltip,
+  TooltipTrigger as BaseTooltipTrigger,
+  TooltipContent as BaseTooltipContent,
+  TooltipProvider,
+} from './tooltip';
+export {
+  Tabs as BaseTabs,
+  TabsList as BaseTabsList,
+  TabsTrigger as BaseTabsTrigger,
+  TabsContent as BaseTabsContent,
+} from './tabs';
