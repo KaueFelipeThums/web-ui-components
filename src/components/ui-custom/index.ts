@@ -17,7 +17,6 @@ export { InputMask, type InputMaskProps } from './input-mask';
 export { InputPassword } from './input-password';
 export { InputNumber } from './input-number';
 export { TextArea } from './textarea';
-export { InputOTP } from './input-otp';
 export { Menubar, type MenubarItemProps, type MenubarMenuProps } from './menubar';
 export { Select, type SelectOptionsProps } from './select';
 export { SelectMultiple } from './select-multiple';

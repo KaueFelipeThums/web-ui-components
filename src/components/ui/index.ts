@@ -101,12 +101,6 @@ export {
   BreadcrumbEllipsis as BaseBreadcrumbEllipsis,
 } from './breadcrumb';
 export { Calendar as BaseCalendar } from './calendar';
-export {
-  InputOTP as BaseInputOTP,
-  InputOTPGroup as BaseInputOTPGroup,
-  InputOTPSlot as BaseInputOTPSlot,
-  InputOTPSeparator as BaseInputOTPSeparator,
-} from './input-otp';
 export { Label } from './label';
 export {
   Menubar as BaseMenubar,
