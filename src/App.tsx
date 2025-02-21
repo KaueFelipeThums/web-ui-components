@@ -1,18 +1,38 @@
-import { HomeIcon, SettingsIcon, UserIcon } from 'lucide-react';
+import { HomeIcon, SettingsIcon, ShoppingCart, Truck, UserIcon } from 'lucide-react';
 import { useState } from 'react';
 import { Calendar } from './components/ui/calendar';
-import { Menubar, MenubarMenuProps, SelectMultiple, SelectOptionsProps } from './components/ui-custom';
+import {
+  InputPassword,
+  InputText,
+  InputTextAdornmentButton,
+  InputTextAdornmentContent,
+  Menubar,
+  MenubarMenuProps,
+  SelectMultiple,
+  SelectOptionsProps,
+} from './components/ui-custom';
 import { Accordion, AccordionItemProps } from './components/ui-custom/accordion';
 import { Alert } from './components/ui-custom/alert';
 import { AlertDialog } from './components/ui-custom/alert-dialog';
 import { Avatar } from './components/ui-custom/avatar';
 import { Breadcrumb } from './components/ui-custom/breadcrumb';
+import { Combobox } from './components/ui-custom/combobox';
 import { Dialog } from './components/ui-custom/dialog';
 import { DropdownMenu, DropdownMenuItemProps } from './components/ui-custom/dropdown-menu';
 import { Icon } from './components/ui-custom/icon';
 import { InputNumber } from './components/ui-custom/input-number';
 import { Tabs } from './components/ui-custom/tabs';
-import { Upload, UploadArea } from './components/ui-custom/upload';
+import { Upload } from './components/ui-custom/upload';
+import {
+  Timeline,
+  TimelineConnector,
+  TimelineContent,
+  TimelineDescription,
+  TimelineDot,
+  TimelineItem,
+  TimelineSeparator,
+  TimelineTitle,
+} from '@/components/ui/timeline';
 import { Button } from '@/components/ui-custom/button';
 
 const AccordionData: AccordionItemProps[] = [
@@ -145,7 +165,7 @@ const menuBarItems: MenubarMenuProps[] = [
 
 function App() {
   const [selectedValue, setSelectedValue] = useState<any>([]);
-  const [uploadValue, setUploadValue] = useState<File[] | null>([]);
+  const [uploadValue, setUploadValue] = useState<File[]>([]);
 
   const options: SelectOptionsProps[] = [
     { value: 'apple', label: 'Maçã' },
@@ -161,16 +181,13 @@ function App() {
   return (
     <div className="m-20">
       <Upload
-        // accept={['image/png', 'image/jpeg']}
-        accept={{
-          'image/png': [],
-          'image/jpeg': [],
-        }}
-        onValueChange={(value) => setUploadValue(value)}
-        value={uploadValue}
-      >
-        <UploadArea />
-      </Upload>
+        onUpload={(files) => setUploadValue(files)}
+        files={uploadValue}
+        title="Drag and drop your files here, or click to select files"
+      />
+
+      <InputNumber />
+
       <Dialog title="Teste" trigger={<Button>Open Dialog</Button>}>
         <AlertDialog title="Teste">
           <Button size="default" icon="Lock">
@@ -220,6 +237,44 @@ function App() {
           placeholder="Selecione uma fruta"
         />
       </Dialog>
+
+      <Combobox type="single" options={options} onValueChange={(value: string) => console.log(value)} />
+
+      <Timeline orientation="horizontal" className="min-h-40">
+        <TimelineItem className="before:flex-1">
+          <TimelineSeparator>
+            <TimelineDot>
+              <ShoppingCart />
+            </TimelineDot>
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>
+            <TimelineTitle>Ordered</TimelineTitle>
+            <TimelineDescription className="whitespace-nowrap">9.15 AM, January 1, 2024</TimelineDescription>
+          </TimelineContent>
+        </TimelineItem>
+        <TimelineItem className="after:flex-1">
+          <TimelineContent>
+            <TimelineTitle>Shipped</TimelineTitle>
+            <TimelineDescription className="whitespace-nowrap">12:20 PM, January 4, 2024</TimelineDescription>
+          </TimelineContent>
+          <TimelineSeparator>
+            <TimelineDot variant="outline"></TimelineDot>
+            <TimelineConnector />
+          </TimelineSeparator>
+        </TimelineItem>
+        <TimelineItem className="after:flex-1">
+          <TimelineContent>
+            <TimelineTitle>Out for Delivery</TimelineTitle>
+            <TimelineDescription className="whitespace-nowrap">07:00 AM, January 8, 2024</TimelineDescription>
+          </TimelineContent>
+          <TimelineSeparator>
+            <TimelineDot>
+              <Truck />
+            </TimelineDot>
+          </TimelineSeparator>
+        </TimelineItem>
+      </Timeline>
     </div>
   );
 }

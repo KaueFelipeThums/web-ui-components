@@ -187,3 +187,66 @@ export {
   TabsTrigger as BaseTabsTrigger,
   TabsContent as BaseTabsContent,
 } from './tabs';
+export {
+  FileList,
+  FileListItem,
+  FileListHeader,
+  FileListAction,
+  FileListDescription,
+  FileListIcon,
+  FileListActions,
+  FileListContent,
+  FileListDescriptionSeparator,
+  FileListDescriptionText,
+  FileListInfo,
+  FileListName,
+  FileListSize,
+} from './file-list';
+export {
+  Timeline,
+  TimelineItem,
+  TimelineConnector,
+  TimelineContent,
+  TimelineDot,
+  TimelineSeparator,
+  TimelineTitle,
+  TimelineDescription,
+  type TimelineDotProps,
+  type TimelineProps,
+} from './timeline';
+export {
+  Dropzone,
+  DropzoneAccepted,
+  DropzoneDescription,
+  DropzoneInput,
+  DropzoneRejected,
+  DropzoneTrigger,
+  DropzoneZone,
+  DropzoneGroup,
+  DropzoneTitle,
+  DropzoneUploadIcon,
+} from './dropzone';
+export {
+  InputBase,
+  InputBaseAdornment,
+  InputBaseAdornmentButton,
+  InputBaseControl,
+  InputBaseFlexWrapper,
+  InputBaseInput,
+  type InputBaseAdornmentProps,
+  type InputBaseProps,
+  type InputBaseContextProps,
+} from './input-base';
+export { PasswordInput, PasswordInputAdornmentToggle, PasswordInputInput } from './password-input';
+export {
+  Combobox,
+  ComboboxContent,
+  ComboboxEmpty,
+  ComboboxGroup,
+  ComboboxInput,
+  ComboboxItem,
+  ComboboxLoading,
+  ComboboxTag,
+  ComboboxTagsInput,
+  comboboxItemStyle,
+} from './combobox';
