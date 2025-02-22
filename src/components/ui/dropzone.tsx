@@ -5,13 +5,13 @@ import * as React from 'react';
 import * as DropzonePrimitive from '@/components/ui/dropzone-primitive';
 import { cn } from '@/lib/utils';
 
-export const Dropzone = DropzonePrimitive.Dropzone;
+export const Dropzone = DropzonePrimitive.Root;
 
 export const DropzoneInput = DropzonePrimitive.Input;
 
 export const DropzoneZone = React.forwardRef<
   React.ElementRef<typeof DropzonePrimitive.Zone>,
-  React.ComponentPropsWithoutRef<typeof DropzonePrimitive.Zone>
+  React.ComponentProps<typeof DropzonePrimitive.Zone>
 >(({ className, ...props }, ref) => (
   <DropzonePrimitive.Zone
     ref={ref}

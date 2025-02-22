@@ -57,7 +57,7 @@ export const ComboboxTagsInput = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof ComboboxPrimitive.Input>
 >(({ children, ...props }, ref) => (
   <ComboboxInputBase>
-    <ComboboxPrimitive.ComboboxTagGroup asChild>
+    <ComboboxPrimitive.TagGroup asChild>
       <InputBaseFlexWrapper className="flex items-center gap-2">
         {children}
         <InputBaseControl>
@@ -66,26 +66,26 @@ export const ComboboxTagsInput = React.forwardRef<
           </ComboboxPrimitive.Input>
         </InputBaseControl>
       </InputBaseFlexWrapper>
-    </ComboboxPrimitive.ComboboxTagGroup>
+    </ComboboxPrimitive.TagGroup>
   </ComboboxInputBase>
 ));
 ComboboxTagsInput.displayName = 'ComboboxTagsInput';
 
 export const ComboboxTag = React.forwardRef<
-  React.ElementRef<typeof ComboboxPrimitive.ComboboxTagGroupItem>,
-  React.ComponentPropsWithoutRef<typeof ComboboxPrimitive.ComboboxTagGroupItem>
+  React.ElementRef<typeof ComboboxPrimitive.TagGroupItem>,
+  React.ComponentPropsWithoutRef<typeof ComboboxPrimitive.TagGroupItem>
 >(({ children, className, ...props }, ref) => (
-  <ComboboxPrimitive.ComboboxTagGroupItem
+  <ComboboxPrimitive.TagGroupItem
     ref={ref}
     className={cn(badgeVariants({ variant: 'outline' }), 'group gap-1 pr-1.5 data-[disabled]:opacity-50', className)}
     {...props}
   >
     <Slottable>{children}</Slottable>
-    <ComboboxPrimitive.ComboboxTagGroupItemRemove className="group-data-[disabled]:pointer-events-none">
+    <ComboboxPrimitive.TagGroupItemRemove className="group-data-[disabled]:pointer-events-none">
       <X className="size-4" />
       <span className="sr-only">Remove</span>
-    </ComboboxPrimitive.ComboboxTagGroupItemRemove>
-  </ComboboxPrimitive.ComboboxTagGroupItem>
+    </ComboboxPrimitive.TagGroupItemRemove>
+  </ComboboxPrimitive.TagGroupItem>
 ));
 ComboboxTag.displayName = 'ComboboxTag';
 

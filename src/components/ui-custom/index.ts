@@ -27,5 +27,6 @@ export { Upload } from './upload';
 export { Combobox } from './combobox';
 export { ComboboxMultiple } from './combobox-multiple';
 export { DatePicker } from './date-picker';
+export { TimePicker } from './time-picker';
 export { Form } from './form';
 export { FormField } from './form-field';

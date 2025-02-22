@@ -81,7 +81,7 @@ export interface ComboboxMultipleProps {
 
 export type ComboboxProps = ComboboxBaseProps & (ComboboxSingleProps | ComboboxMultipleProps);
 
-export const Combobox = React.forwardRef(
+const Combobox = React.forwardRef(
   <T extends ComboboxType = 'single'>(
     {
       type = 'single' as T,
@@ -162,7 +162,7 @@ export const Combobox = React.forwardRef(
 );
 Combobox.displayName = 'Combobox';
 
-export const ComboboxTagGroup = React.forwardRef<
+const ComboboxTagGroup = React.forwardRef<
   React.ElementRef<typeof RovingFocusGroupPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof RovingFocusGroupPrimitive.Root>
 >((props, ref) => {
@@ -200,7 +200,7 @@ const ComboboxTagGroupItemContext = React.createContext<Pick<ComboboxTagGroupIte
 
 const useComboboxTagGroupItemContext = () => React.useContext(ComboboxTagGroupItemContext);
 
-export const ComboboxTagGroupItem = React.forwardRef<
+const ComboboxTagGroupItem = React.forwardRef<
   React.ElementRef<typeof RovingFocusGroupPrimitive.Item>,
   ComboboxTagGroupItemProps
 >(({ onClick, onKeyDown, value: valueProp, disabled, ...props }, ref) => {
@@ -244,7 +244,7 @@ export const ComboboxTagGroupItem = React.forwardRef<
 });
 ComboboxTagGroupItem.displayName = 'ComboboxTagGroupItem';
 
-export const ComboboxTagGroupItemRemove = React.forwardRef<
+const ComboboxTagGroupItemRemove = React.forwardRef<
   React.ElementRef<typeof Primitive.button>,
   React.ComponentPropsWithoutRef<typeof Primitive.button>
 >(({ onClick, ...props }, ref) => {
@@ -269,7 +269,7 @@ export const ComboboxTagGroupItemRemove = React.forwardRef<
 });
 ComboboxTagGroupItemRemove.displayName = 'ComboboxTagGroupItemRemove';
 
-export const ComboboxInput = React.forwardRef<
+const ComboboxInput = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Input>,
   Omit<React.ComponentProps<typeof CommandPrimitive.Input>, 'value' | 'onValueChange'>
 >(({ onKeyDown, onMouseDown, onFocus, onBlur, ...props }, ref) => {
@@ -336,7 +336,7 @@ export const ComboboxInput = React.forwardRef<
 });
 ComboboxInput.displayName = 'ComboboxInput';
 
-export const ComboboxClear = React.forwardRef<
+const ComboboxClear = React.forwardRef<
   React.ElementRef<typeof Primitive.button>,
   React.ComponentPropsWithoutRef<typeof Primitive.button>
 >(({ onClick, ...props }, ref) => {
@@ -368,7 +368,7 @@ export const ComboboxAnchor = PopoverPrimitive.Anchor;
 
 export const ComboboxPortal = PopoverPrimitive.Portal;
 
-export const ComboboxContent = React.forwardRef<
+const ComboboxContent = React.forwardRef<
   React.ElementRef<typeof PopoverPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>
 >(({ children, onOpenAutoFocus, onInteractOutside, ...props }, ref) => (
@@ -421,7 +421,7 @@ const findComboboxItemText = (children: React.ReactNode) => {
   return text;
 };
 
-export const ComboboxItem = React.forwardRef<React.ElementRef<typeof CommandPrimitive.Item>, ComboboxItemProps>(
+const ComboboxItem = React.forwardRef<React.ElementRef<typeof CommandPrimitive.Item>, ComboboxItemProps>(
   ({ value: valueProp, children, onMouseDown, ...props }, ref) => {
     const { type, value, onValueChange, onInputValueChange, onOpenChange } = useComboboxContext();
 
@@ -456,7 +456,7 @@ export const ComboboxItem = React.forwardRef<React.ElementRef<typeof CommandPrim
 );
 ComboboxItem.displayName = 'ComboboxItem';
 
-export const ComboboxItemIndicator = React.forwardRef<
+const ComboboxItemIndicator = React.forwardRef<
   React.ElementRef<typeof Primitive.span>,
   React.ComponentPropsWithoutRef<typeof Primitive.span>
 >((props, ref) => {
@@ -470,11 +470,11 @@ export const ComboboxItemIndicator = React.forwardRef<
 });
 ComboboxItemIndicator.displayName = 'ComboboxItemIndicator';
 
-export interface ComboboxItemTextProps extends React.ComponentPropsWithoutRef<typeof React.Fragment> {
+export type ComboboxItemTextProps = React.ComponentPropsWithoutRef<typeof React.Fragment> & {
   children: string;
-}
+};
 
-export const ComboboxItemText = (props: ComboboxItemTextProps) => <React.Fragment {...props} />;
+const ComboboxItemText = (props: ComboboxItemTextProps) => <React.Fragment {...props} />;
 
 ComboboxItemText.displayName = 'ComboboxItemText';
 
