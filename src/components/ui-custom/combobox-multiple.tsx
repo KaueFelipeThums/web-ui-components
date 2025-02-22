@@ -1,19 +1,20 @@
-import { ReactElement, useState } from 'react';
+import { ReactElement } from 'react';
 import { Icon } from './icon';
 import { SelectOptionsProps } from './select';
 import {
   BaseCombobox,
   BaseComboboxContent,
-  BaseComboboxInput,
   BaseComboboxLoading,
   BaseComboboxItem,
   BaseComboboxEmpty,
   BaseComboboxGroup,
+  BaseComboboxTagsInput,
+  BaseComboboxTag,
 } from '@/components/ui';
 
-type ComboboxProps = React.ComponentProps<typeof BaseCombobox> & {
+type ComboboxMultipleProps = React.ComponentProps<typeof BaseCombobox> & {
   /** Valor selecionado no campo. */
-  value?: string | null;
+  value?: string[] | null;
 
   /** Texto exibido como placeholder no campo de busca. */
   placeholder?: string;
@@ -39,40 +40,31 @@ type ComboboxProps = React.ComponentProps<typeof BaseCombobox> & {
   /** Classe personalizada para o container do campo de busca. */
   containerClassName?: string;
 
-  type?: 'single';
+  type?: 'multiple';
 };
 
 /**
  * Componente de seleção com busca personalizada.
  *
- * @param {ComboboxProps}
+ * @param {ComboboxMultipleProps}
  * @returns {ReactElement}
  */
-const Combobox = ({
+const ComboboxMultiple = ({
   placeholder,
   options = [],
-  className,
   containerClassName,
+  className,
   value,
   heading,
   emptyText = 'Nenhum registro encontrado!',
   disabled,
   onSearch,
   loading,
-  type = 'single',
+  type = 'multiple',
   ...props
-}: ComboboxProps): ReactElement => {
-  const [inputValue, setInputValue] = useState<string>('');
-
+}: ComboboxMultipleProps): ReactElement => {
   const onInputChange = (value: string) => {
-    setInputValue(value);
     onSearch?.(value);
-  };
-
-  const onInputBlur = (e: React.FocusEvent<HTMLInputElement, Element>) => {
-    const newInputValue = options.find((option) => option.value === value);
-    setInputValue(newInputValue?.label ?? '');
-    props.onInputBlur?.(e);
   };
 
   return (
@@ -82,13 +74,18 @@ const Combobox = ({
       className={containerClassName}
       disabled={disabled}
       defaultValue={undefined}
-      value={value ?? ''}
+      value={value ?? []}
       shouldFilter={onSearch ? false : true}
       onInputValueChange={onInputChange}
-      inputValue={inputValue}
-      onInputBlur={onInputBlur}
     >
-      <BaseComboboxInput className={className} placeholder={placeholder} disabled={disabled} />
+      <BaseComboboxTagsInput className={className} placeholder={placeholder} disabled={disabled}>
+        {value?.map((value) => (
+          <BaseComboboxTag key={value} value={value}>
+            {options.find((fruit) => fruit.value === value)?.label}
+          </BaseComboboxTag>
+        ))}
+      </BaseComboboxTagsInput>
+
       <BaseComboboxContent>
         {loading ? (
           <BaseComboboxLoading />
@@ -112,4 +109,4 @@ const Combobox = ({
   );
 };
 
-export { Combobox };
+export { ComboboxMultiple };

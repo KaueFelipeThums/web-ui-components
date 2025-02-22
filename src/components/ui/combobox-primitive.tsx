@@ -474,9 +474,8 @@ export interface ComboboxItemTextProps extends React.ComponentPropsWithoutRef<ty
   children: string;
 }
 
-export const ComboboxItemText = React.forwardRef<React.ElementRef<typeof React.Fragment>, ComboboxItemTextProps>(
-  (props) => <React.Fragment {...props} />,
-);
+export const ComboboxItemText = (props: ComboboxItemTextProps) => <React.Fragment {...props} />;
+
 ComboboxItemText.displayName = 'ComboboxItemText';
 
 export const ComboboxGroup = CommandPrimitive.Group;

@@ -25,9 +25,9 @@ type AvatarProps = React.ComponentProps<typeof BaseAvatar> & {
  * @returns {ReactElement}
  */
 const Avatar = forwardRef<React.ComponentRef<typeof BaseAvatar>, AvatarProps>(
-  ({ src, alt, fallback, imageClassName, fallbackClassName, ...props }: AvatarProps): ReactElement => {
+  ({ src, alt, fallback, imageClassName, fallbackClassName, ...props }, ref): ReactElement => {
     return (
-      <BaseAvatar {...props}>
+      <BaseAvatar ref={ref} {...props}>
         {src && <BaseAvatarImage className={imageClassName} src={src} alt={alt} referrerPolicy="no-referrer" />}
         <BaseAvatarFallback className={fallbackClassName}>{fallback}</BaseAvatarFallback>
       </BaseAvatar>

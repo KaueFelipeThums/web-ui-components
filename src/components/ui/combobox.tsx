@@ -125,7 +125,7 @@ export const ComboboxLoading = React.forwardRef<
     className={cn('flex items-center justify-center px-1.5 py-2', className)}
     {...props}
   >
-    <Loader className="size-4 animate-spin [mask:conic-gradient(transparent_45deg,_white)]" />
+    <Loader className="size-5 animate-spin [mask:conic-gradient(transparent_45deg,_white)]" />
   </ComboboxPrimitive.Loading>
 ));
 ComboboxLoading.displayName = 'ComboboxLoading';

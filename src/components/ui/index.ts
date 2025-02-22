@@ -239,14 +239,14 @@ export {
 } from './input-base';
 export { PasswordInput, PasswordInputAdornmentToggle, PasswordInputInput } from './password-input';
 export {
-  Combobox,
-  ComboboxContent,
-  ComboboxEmpty,
-  ComboboxGroup,
-  ComboboxInput,
-  ComboboxItem,
-  ComboboxLoading,
-  ComboboxTag,
-  ComboboxTagsInput,
-  comboboxItemStyle,
+  Combobox as BaseCombobox,
+  ComboboxContent as BaseComboboxContent,
+  ComboboxEmpty as BaseComboboxEmpty,
+  ComboboxGroup as BaseComboboxGroup,
+  ComboboxInput as BaseComboboxInput,
+  ComboboxItem as BaseComboboxItem,
+  ComboboxLoading as BaseComboboxLoading,
+  ComboboxTag as BaseComboboxTag,
+  ComboboxTagsInput as BaseComboboxTagsInput,
+  comboboxItemStyle as BasecomboboxItemStyle,
 } from './combobox';

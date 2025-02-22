@@ -33,7 +33,7 @@ export const PasswordInputInput = React.forwardRef<
 >((props, ref) => (
   <InputBaseControl>
     <PasswordInputPrimitive.Input ref={ref} asChild {...props}>
-      <InputBaseInput />
+      <InputBaseInput autoComplete="false" />
     </PasswordInputPrimitive.Input>
   </InputBaseControl>
 ));
