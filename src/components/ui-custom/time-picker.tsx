@@ -47,7 +47,7 @@ const TimePicker = ({
   return (
     <div
       className={cn(
-        'inline-flex items-center shadow-sm h-10 w-full flex-1 rounded-md border border-input bg-transparent px-3 py-1 text-sm ring-offset-background focus-within:ring-1 focus-within:ring-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+        'inline-flex items-center shadow-sm h-9 w-full flex-1 rounded-md border border-input bg-transparent px-3 py-1 text-sm ring-offset-background focus-within:ring-1 focus-within:ring-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
         className,
         disabled ? 'cursor-not-allowed opacity-50' : '',
       )}
